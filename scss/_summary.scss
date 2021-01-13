@@ -1,0 +1,26 @@
+html {
+  font-size: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+section {
+  width: 100%;
+}
+
+.container {
+  width: $desktop;
+  margin: 0 auto;
+  display: flex;
+
+  @media screen and (max-width: 1020px){
+    width: 100%;
+  }
+
+  &_header {
+    justify-content: space-between;
+  }
+}

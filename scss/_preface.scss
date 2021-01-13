@@ -1,0 +1,33 @@
+.preface {
+  background: url('../assets/photos/489560-min.jpg'), rgba(0, 0, 0, 0.6);
+  background-blend-mode: overlay;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.hello {
+  text-align: center;
+  &_paragraph {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+.learn_more {
+  border: 2px solid white;
+  display: inline-block;
+  font-size: 1.5rem;
+  padding: 0 10px;
+  margin: 0 auto;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2);
+
+  &:hover {
+    padding: 0 15px;
+    box-shadow: 0 1px 2px 0 white;
+  }
+}

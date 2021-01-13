@@ -1,0 +1,3 @@
+@mixin social-media($horisontal, $vertical) {
+  background: url('../assets/icons/css_sprites.png') $horisontal $vertical;
+}

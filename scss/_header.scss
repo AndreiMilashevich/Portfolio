@@ -1,0 +1,36 @@
+.header {
+  position: fixed;
+  width: 100%;
+  font-size: 2rem;
+  color: #fff;  
+}
+
+.header_scroll {
+  background-color: $header-color;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  color: $hover-color;
+  font-size: 2rem;
+  padding-left: 40px;
+
+  &_body {
+    color: #ff2400;
+  }
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  padding-right: 30px;
+}
+
+li {
+  padding-right: 10px;
+  cursor: pointer;
+
+  &:hover {
+    color: #ff0;
+  }
+}
