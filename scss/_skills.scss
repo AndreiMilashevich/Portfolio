@@ -1,0 +1,31 @@
+.skills {
+  &_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px;
+  }
+
+  &_header {
+    text-align: center;
+  }
+
+  &_image {
+    width: 150px;
+    height: 150px;
+    background-image: url('../assets/icons/html5_icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &_description {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &_item {
+      
+  }
+}
