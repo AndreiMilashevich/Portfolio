@@ -1,31 +1,110 @@
-import "../scss/index.scss";
+import '../scss/index.scss';
 
 const skillsContainer = document.querySelector('.skills_wrapper');
-const fragment = document.createDocumentFragment();
+const portfolioButtonContainer = document.querySelector('.portfolio_button_container');
+const portfolioContainer = document.querySelector('.portfolio_wrapper');
+const skillsDelay = 200;
+
+const portfolio = [
+  {
+    name: 'fancy-weather',
+    icon: '../assets/icons/fancy-weather_icon-min.png',
+    description: 'lorem ipsum',
+    linkGit: 'https://github.com/AndreiMilashevich/rsschool-cv/tree/fancy-weather',
+    linkDemo: 'https://andreimilashevich.github.io/rsschool-cv/fancy-weather/build/index.html',
+  },
+  {
+    name: 'Simple-singolo',
+    icon: '../assets/icons/singolo_icon-min.png',
+    description: 'lorem ipsum',
+    linkGit: 'https://github.com/AndreiMilashevich/simple-singolo',
+    linkDemo: 'https://andreimilashevich.github.io/simple-singolo/simple-singolo/index',
+  },
+  {
+    name: 'Raindrops',
+    icon: '../assets/icons/raindrops-min.png',
+    description: 'lorem ipsum',
+    linkGit: 'https://github.com/AndreiMilashevich/raindrops',
+    linkDemo: 'https://andreimilashevich.github.io/raindrops/raindrops/build/index',
+  },
+];
 
 const skills = [
-    {description: 'HTML5', icon: '../assets/icons/html5_icon.png'},
-    {description: 'CSS3', icon: '../assets/icons/css3_icon.png'},
-    {description: 'JavaScript', icon: '../assets/icons/js_icon.png'},
-    {description: 'SASS', icon: '../assets/icons/sass_icon.png'},
-    {description: 'Git', icon: '../assets/icons/git_icon.png'},
-    {description: 'GitHub', icon: '../assets/icons/github_icon.png'},
-]
+  { description: 'HTML5', icon: '../assets/icons/html5_icon.png' },
+  { description: 'CSS3', icon: '../assets/icons/css3_icon.png' },
+  { description: 'JavaScript', icon: '../assets/icons/js_icon.png' },
+  { description: 'SASS', icon: '../assets/icons/sass_icon.png' },
+  { description: 'Git', icon: '../assets/icons/git_icon.png' },
+  { description: 'GitHub', icon: '../assets/icons/github_icon.png' },
+  { description: 'Webpack', icon: '../assets/icons/webpack_icon.png' },
+];
+
+const technologies = [
+  { name: 'All' },
+  { name: 'HTML5' },
+  { name: 'CSS3' },
+  { name: 'SASS' },
+  { name: 'JS' },
+  { name: 'Webpack' },
+];
 
 function setSkills(data) {
-    data.forEach(element => {
-        const divContainer = document.createElement('div');
-        const div = document.createElement('div');
-        const p = document.createElement('p');
-        divContainer.className = "skills_item";
-        div.className = 'skills_image';
-        p.className = "skills_description";
-        div.style.backgroundImage = `url(${element.icon})`;
-        p.textContent = element.description;
-        divContainer.appendChild(div);
-        divContainer.appendChild(p);
-        skillsContainer.appendChild(divContainer);
-    });
+  data.forEach((element, index) => {
+    const divContainer = document.createElement('div');
+    const div = document.createElement('div');
+    const p = document.createElement('p');
+    divContainer.className = 'skills_item';
+    divContainer.setAttribute('data-aos', 'flip-left');
+    divContainer.setAttribute('data-aos-delay', index * skillsDelay);
+    divContainer.setAttribute('data-aos-duration', 1000);
+    div.className = 'skills_image';
+    p.className = 'skills_description';
+    div.style.backgroundImage = `url(${element.icon})`;
+    p.textContent = element.description;
+    divContainer.appendChild(div);
+    divContainer.appendChild(p);
+    skillsContainer.appendChild(divContainer);
+  });
+}
+
+function setPortfolioButton(data) {
+  data.forEach((element, index) => {
+    const div = document.createElement('div');
+    div.className = 'portfolio_button_item';
+    div.textContent = element.name;
+    div.setAttribute('data-aos', 'fade-down');
+    div.setAttribute('data-aos-delay', (index * skillsDelay) / 2);
+    div.setAttribute('data-aos-duration', 500);
+    portfolioButtonContainer.appendChild(div);
+  });
 }
 
 setSkills(skills);
+setPortfolioButton(technologies);
+
+function setPortfolioItem(data) {
+  data.forEach((element, index) => {
+    let side;
+    if (index % 2 === 0) {
+      side = 'left';
+    } else {
+      side = 'right';
+    }
+    portfolioContainer.insertAdjacentHTML('beforeend', `<div class="portfolio_item" data-aos="fade-${side}" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+    <h3>${element.name}</h3>
+    <div class="portfolio_item_body">
+      <div class="portfolio_item_image" style="background-image: url('${element.icon}')"></div>
+      <div class="portfolio_item_description"><p>${element.description}</p></div>  
+    </div>
+    <div class="portfolio_item_button_container button" >
+      <a href="${element.linkDemo}">
+        <div class="portfolio_button_item">Demo</div>
+      </a>
+      <a href="${element.linkGit}">
+        <div class="portfolio_button_item">GitHub</div>
+      </a>
+    </div>
+  </div>`);
+  });
+}
+setPortfolioItem(portfolio);

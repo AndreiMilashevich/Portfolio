@@ -15,9 +15,10 @@
       sizes="32x32"
       href="../assets/icons/favicon-32x32.png"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
-    <header class="header">
+    <header class="header header_scroll" data-aos="fade-down" data-aos-duration="1000">
       <div class="container container_header">
         <div class="logo">
           <p>&#60;/<span class="logo_body">Andrei_M</span>&#62;</p>
@@ -34,7 +35,7 @@
       </div>
     </header>
     <section class="preface">
-      <div class="hello">
+      <div class="hello" data-aos="flip-down" data-aos-duration="750">
         <h1 class="hello_paragraph">
           Hello,<br />I'm Andrei and I'm a frontend developer
         </h1>
@@ -45,8 +46,16 @@
     </section>
     <section class="skills">
       <h2 class="skills_header">Technical skills</h2>
-      <div class="container container_skills">
-        <div class="skills_wrapper"></div>
+      <div class="container skills_wrapper container_skills"></div>
+    </section>
+    <section class="portfolio">
+      <h2 class="portfolio_header">Portfolio</h2>
+
+      <div class="container container_portfolio">
+        <div class="portfolio_button_container"></div>
+        <div class="portfolio_wrapper">
+          
+        </div>
       </div>
     </section>
     <footer>
@@ -70,5 +79,9 @@
         </div>
       </div>
     </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
