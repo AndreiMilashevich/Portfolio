@@ -1,0 +1,59 @@
+.about_me {
+  &_body {
+    display: flex;
+    padding-left: 40px;
+  }
+
+  &_description {
+    padding: 0 20px;
+    font-size: 1.6rem;
+  }
+
+  &_image {
+    &_item {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      border: 5px solid white;
+      outline: 1px solid black;
+      background-size: cover;
+      transition: all 0.3s;
+      box-sizing: border-box;
+
+      &_now {
+        background-image: url('../assets/photos/foto-now-min.png');
+        z-index: 3;
+      }
+
+      &_past {
+        background-image: url('../assets/photos/be90367e6933b2301eae4d2bac79c8d3-min.jpg');
+        top: 25px;
+        left: 50px;
+        z-index: 2;
+      }
+
+      &_plane {
+        background-image: url('../assets/photos/5942981_large-min.jpg');
+        top: 50px;
+        left: 100px;
+        z-index: 1;
+      }
+
+      &_large {
+        z-index: 10;
+        width: 370px;
+        height: 370px;
+        left: 0;
+        bottom: 0;
+        transition: all 0.3s;
+      }
+    }
+
+    &_wrapper {
+      position: relative;
+      width: 300px;
+      min-width: 300px;
+      height: 300px;
+    }
+  }
+}

@@ -31,6 +31,16 @@ section {
   &_portfolio {
     flex-direction: column;
     padding-bottom: 10px;
+
+    & p {
+      margin: 0;
+    }
+  }
+
+  &_about_me {
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px 40px;
   }
 }
 
@@ -52,6 +62,5 @@ a {
   color: inherit;
   text-decoration: none;
   font-size: inherit;
-  font: inherit;
-
+  font-style: inherit;
 }

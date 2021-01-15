@@ -28,14 +28,13 @@
       padding-left: 20px;
       text-align: justify;
       color: $portfolio-text;
-      text-indent: 35px;
+      text-indent: 2.5rem;
     }
 
     &_image {
       width: 200px;
       min-width: 200px;
       height: 200px;
-      background-image: url('../assets/icons/fancy-weather_icon-min.png');
       background-size: cover;
       border-radius: 10px;
     }
