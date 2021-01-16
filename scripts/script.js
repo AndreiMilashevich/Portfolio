@@ -4,6 +4,8 @@ const skillsContainer = document.querySelector('.skills_wrapper');
 const portfolioButtonContainer = document.querySelector('.portfolio_button_container');
 const portfolioContainer = document.querySelector('.portfolio_wrapper');
 const skillsDelay = 200;
+const photoContainer = document.querySelector('.about_me_image_wrapper');
+const photos = Array.from(document.querySelectorAll('.about_me_image_item'));
 
 const portfolio = [
   {
@@ -108,3 +110,10 @@ function setPortfolioItem(data) {
   });
 }
 setPortfolioItem(portfolio);
+document.body.addEventListener('click', (event) => {
+  if (event.target.dataset.type === 'image') {
+    event.target.classList.toggle('about_me_image_item_large');
+  } else {
+    photos.forEach((el) => el.classList.remove('about_me_image_item_large'));
+  }
+});
