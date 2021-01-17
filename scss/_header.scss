@@ -19,20 +19,18 @@ ul {
   display: flex;
   list-style-type: none;
   padding: 0;
-  
 }
 
 li {
+  padding-right: 10px;
+  cursor: pointer;
 
   &:first-child {
     padding-left: 10px;
   }
-  padding-right: 10px;
-  cursor: pointer;
 
   &:hover {
     text-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
-    ;
   }
 }
 

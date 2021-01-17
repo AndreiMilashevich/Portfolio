@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #fff;
 }
 
 .hello {
@@ -24,7 +24,7 @@
 }
 
 .learn_more {
-  border: 2px solid white;
+  border: 2px solid #fff;
   display: inline-block;
   font-size: 1.5rem;
   padding: 0 10px;
@@ -34,7 +34,7 @@
 
   &:hover {
     padding: 0 15px;
-    box-shadow: 0 1px 2px 0 white;
+    box-shadow: 0 1px 2px 0 #fff;
     background-color: rgba(255, 255, 255, 0.3);
   }
 }
