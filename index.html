@@ -18,19 +18,15 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
-    <main id="swup" class="transition-fade">
     <header class="header header_scroll" data-aos="fade-down" data-aos-duration="1000">
       <div class="container container_header">
-        <div class="logo">
-          <p>&#60;/<span class="logo_body">Andrei_M</span>&#62;</p>
-        </div>
         <nav>
           <ul>
-            <li>Home</li>
-            <li>Skills</li>
-            <li>Portfolio</li>
-            <li>About me</li>
-            <li>Contacts</li>
+            <li class="button_home active">Home</li>
+            <li class="button_skills">Skills</li>
+            <li class="button_portfolio">Portfolio</li>
+            <li class="button_about_me">About me</li>
+            <!-- <li class="button_contacts">Contacts</li> -->
           </ul>
         </nav>
       </div>
@@ -40,7 +36,7 @@
         <h1 class="hello_paragraph">
           Hello,<br />I'm Andrei and I'm a frontend developer
         </h1>
-        <div class="learn_more ">
+        <div class="learn_more">
           <p>Learn more about what I do</p>
         </div>
       </div>
@@ -68,9 +64,13 @@
             <div class="about_me_image_item about_me_image_item_past"  data-type="image"></div>
             <div class="about_me_image_item about_me_image_item_plane" data-type="image"></div>
           </div>
-          <div class="about_me_description">My name is Andrei.<br>
-          I was graduated at «The Rolling Scopes school» (EPAM Systems) in 2021. And now I'm a frontend developer. Before that, I was an aero-space engineer about ten years.
-        </div>
+          <div class="about_me_description"><b>A couple of words about me:</b><br>
+            &bull; Education: Military Academy of the Republic of Belarus (2011). Aviation faculty.<br>
+            &bull; Specialty: Technical exploitation of manned aircrafts and their power unins.<br>
+            &bull; Previous job: Engineer of the aviation engineering department of the aviation squadron (IL-76, An-26)<br>
+            &bull; Courses: SkillUp(Ukraine) - Basic Web and SQL for software testing (2020) and «The Rolling Scopes school» (EPAM Systems) (2021).<br>
+            &bull; English: A2 - Pre-intermediate
+          </div>
         </div>
       </div>
     </section>
@@ -99,6 +99,5 @@
     <script>
       AOS.init();
     </script>
-    </main>
   </body>
 </html>

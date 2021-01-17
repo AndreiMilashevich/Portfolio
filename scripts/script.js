@@ -4,8 +4,19 @@ const skillsContainer = document.querySelector('.skills_wrapper');
 const portfolioButtonContainer = document.querySelector('.portfolio_button_container');
 const portfolioContainer = document.querySelector('.portfolio_wrapper');
 const skillsDelay = 200;
-const photoContainer = document.querySelector('.about_me_image_wrapper');
 const photos = Array.from(document.querySelectorAll('.about_me_image_item'));
+
+const skillsButton = document.querySelector('.button_skills');
+const homeButton = document.querySelector('.button_home');
+const portfolioButton = document.querySelector('.button_portfolio');
+const aboutMeButton = document.querySelector('.button_about_me');
+const contactButton = document.querySelector('.button_contacts');
+const learnMoreButton = document.querySelector('.learn_more');
+
+const skillSection = document.querySelector('.skills');
+const portfolioSection = document.querySelector('.portfolio');
+const aboutMeSection = document.querySelector('.about_me');
+const header = document.querySelector('header');
 
 const portfolio = [
   {
@@ -99,16 +110,37 @@ function setPortfolioItem(data) {
       <div class="portfolio_item_description"><p>${element.description}</p></div>  
     </div>
     <div class="portfolio_item_button_container button" >
-      <a href="${element.linkDemo}">
+      <a href="${element.linkDemo}" target="_blank">
         <div class="portfolio_button_item">Demo</div>
       </a>
-      <a href="${element.linkGit}">
+      <a href="${element.linkGit}" target="_blank">
         <div class="portfolio_button_item">GitHub</div>
       </a>
     </div>
   </div>`);
   });
 }
+
+function debounce(func, wait, immediate) {
+  let timeout;
+  return function () {
+    const context = this; const
+      args = arguments;
+    const later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    const callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
+
+function scroll(block, deltaHeight = header.offsetHeight) {
+  window.scrollTo({ left: 0, top: block.offsetTop - deltaHeight + 1, behavior: 'smooth' });
+}
+
 setPortfolioItem(portfolio);
 document.body.addEventListener('click', (event) => {
   if (event.target.dataset.type === 'image') {
@@ -117,3 +149,34 @@ document.body.addEventListener('click', (event) => {
     photos.forEach((el) => el.classList.remove('about_me_image_item_large'));
   }
 });
+
+const setButtonsActive = () => {
+  const scrollDistance = window.pageYOffset;
+  portfolioButton.classList.remove('active');
+  homeButton.classList.remove('active');
+  if (scrollDistance >= skillSection.offsetTop - header.offsetHeight && scrollDistance + header.offsetHeight < portfolioSection.offsetTop) {
+    skillsButton.classList.add('active');
+  } else {
+    skillsButton.classList.remove('active');
+  }
+  if (scrollDistance >= portfolioSection.offsetTop - header.offsetHeight && scrollDistance <= portfolioSection.offsetTop + portfolioSection.offsetHeight) {
+    portfolioButton.classList.add('active');
+  }
+  if (scrollDistance >= aboutMeSection.offsetTop - header.offsetHeight && scrollDistance <= aboutMeSection.offsetTop + aboutMeSection.offsetHeight) {
+    aboutMeButton.classList.add('active');
+  } else {
+    aboutMeButton.classList.remove('active');
+  }
+
+  if (scrollDistance < skillSection.offsetTop - header.offsetHeight) {
+    homeButton.classList.add('active');
+  }
+};
+
+skillsButton.addEventListener('click', () => scroll(skillSection));
+learnMoreButton.addEventListener('click', () => scroll(skillSection));
+homeButton.addEventListener('click', () => scroll(0, 0));
+portfolioButton.addEventListener('click', () => scroll(portfolioSection));
+aboutMeButton.addEventListener('click', () => scroll(aboutMeSection));
+// contactButton.addEventListener('click', () => scroll(skillSection));
+window.addEventListener('scroll', debounce(setButtonsActive, 400));

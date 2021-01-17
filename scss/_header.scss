@@ -2,8 +2,12 @@
   width: 100%;
   font-size: 2rem;
   color: #fff;
-  // z-index: 10;
-  // position: fixed;
+  z-index: 10;
+  position: fixed;
+
+  @media screen and (max-width: $tablet) {
+    font-size: 1.4rem;
+  }
 }
 
 .header_scroll {
@@ -11,27 +15,27 @@
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
 }
 
-.logo {
-  color: $hover-color;
-  font-size: 2rem;
-  padding-left: 40px;
-
-  &_body {
-    color: #ff2400;
-  }
-}
-
 ul {
   display: flex;
   list-style-type: none;
-  padding-right: 30px;
+  padding: 0;
+  
 }
 
 li {
+
+  &:first-child {
+    padding-left: 10px;
+  }
   padding-right: 10px;
   cursor: pointer;
 
   &:hover {
-    color: #ff0;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
+    ;
   }
+}
+
+.active {
+  color: #ff0;
 }

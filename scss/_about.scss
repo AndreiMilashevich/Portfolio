@@ -1,18 +1,28 @@
 .about_me {
   &_body {
     display: flex;
-    padding: 0 40px;
+    padding: 0 10px 10px;
+
+    @media screen and (max-width: $tablet) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &_description {
-    padding: 0 20px;
+    padding: 0 10px 0 20px;
     font-size: 1.6rem;
+    text-align: justify;
+
+    @media screen and (max-width: $tablet) {
+      font-size: 1.4rem;
+    }
   }
 
   &_image {
     &_item {
-      width: 25vmin;
-      height: 25vmin;
+      width: 200px;
+      height: 200px;
       position: absolute;
       border: 5px solid white;
       outline: 1px solid black;
@@ -20,6 +30,11 @@
       transition: all 0.3s;
       box-sizing: border-box;
       cursor: pointer;
+
+      @media screen and (max-width: $tablet) {
+        width: 150px;
+        height: 150px;
+      }
 
       &_now {
         background-image: url('../assets/photos/foto-now-min.png');
@@ -32,6 +47,10 @@
         top: 25px;
         left: 50px;
         z-index: 2;
+
+        @media screen and (max-width: $tablet) {
+          top: 0;
+        }
       }
 
       &_plane {
@@ -39,6 +58,10 @@
         top: 50px;
         left: 100px;
         z-index: 1;
+
+        @media screen and (max-width: $tablet) {
+          top: 0;
+        }
       }
 
       &_large {
@@ -48,14 +71,25 @@
         transform: scale(2, 2) translateX(10%);
         transition: all 0.5s;
         transform-origin: left center;
+
+        @media screen and (max-width: $tablet) {
+          transform: scale(1.5, 1.5) translateX(10%);
+        }
       }
     }
 
     &_wrapper {
       position: relative;
-      width: 40vmin;
-      min-width: 40vmin;
-      height: 40vmin;
+      width: 300px;
+      min-width: 300px;
+      height: 300px;
+
+      @media screen and (max-width: $tablet) {
+        width: 250px;
+        min-width: 250px;
+        height: 150px;
+        margin-bottom: 20px;
+      }
     }
   }
 }

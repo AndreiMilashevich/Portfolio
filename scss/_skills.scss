@@ -11,6 +11,11 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+
+    @media screen and (max-width: $tablet) {
+      width: 75px;
+      height: 75px;
+    }
   }
 
   &_description {
