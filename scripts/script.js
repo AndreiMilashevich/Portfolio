@@ -1,4 +1,20 @@
 import '../scss/index.scss';
+import Typed from 'typed.js';
+
+const options = {
+  strings: ['Hello',
+    "I'm Andrei!",
+    "I'm a front-End Web Developer!",
+    
+  ],
+  typeSpeed: 60,
+  backDelay: 1200,
+  backSpeed: 43,
+  loop: true,
+  fadeOut: false
+};
+
+const typed = new Typed('.typed', options);
 
 const skillsContainer = document.querySelector('.skills_wrapper');
 const portfolioButtonContainer = document.querySelector('.portfolio_button_container');
@@ -103,7 +119,7 @@ function setPortfolioItem(data) {
     } else {
       side = 'right';
     }
-    portfolioContainer.insertAdjacentHTML('beforeend', `<div class="portfolio_item" data-aos="fade-${side}" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+    portfolioContainer.insertAdjacentHTML('beforeend', `<div class="portfolio_item" data-aos="flip-${side}" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
     <h3>${element.name}</h3>
     <div class="portfolio_item_body">
       <div class="portfolio_item_image" style="background-image: url('${element.icon}')"></div>

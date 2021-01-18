@@ -1,4 +1,8 @@
 .about_me {
+  &_header {
+    padding: 0;
+  }
+
   &_body {
     display: flex;
     padding: 0 10px 10px;
@@ -82,7 +86,7 @@
       position: relative;
       width: 300px;
       min-width: 300px;
-      height: 300px;
+      height: 250px;
 
       @media screen and (max-width: $tablet) {
         width: 250px;

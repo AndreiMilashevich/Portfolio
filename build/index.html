@@ -18,7 +18,11 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link href="main.css" rel="stylesheet"></head>
   <body>
-    <header class="header header_scroll" data-aos="fade-down" data-aos-duration="1000">
+    <header
+      class="header header_scroll"
+      data-aos="fade-down"
+      data-aos-duration="1000"
+    >
       <div class="container container_header">
         <nav>
           <ul>
@@ -34,8 +38,9 @@
     <section class="preface">
       <div class="hello" data-aos="flip-down" data-aos-duration="750">
         <h1 class="hello_paragraph">
-          Hello,<br />I'm Andrei and I'm a frontend developer
+          Hello,<br /><span class="typed"><span>
         </h1>
+        <!-- I'm Andrei and I'm a frontend developer -->
         <div class="learn_more">
           <p>Learn more about what I do</p>
         </div>
@@ -50,9 +55,7 @@
 
       <div class="container container_portfolio">
         <div class="portfolio_button_container"></div>
-        <div class="portfolio_wrapper">
-          
-        </div>
+        <div class="portfolio_wrapper"></div>
       </div>
     </section>
     <section class="about_me">
@@ -60,15 +63,30 @@
         <h2 class="about_me_header">About me</h2>
         <div class="about_me_body">
           <div class="about_me_image_wrapper">
-            <div class="about_me_image_item about_me_image_item_now" data-type="image"></div>
-            <div class="about_me_image_item about_me_image_item_past"  data-type="image"></div>
-            <div class="about_me_image_item about_me_image_item_plane" data-type="image"></div>
+            <div
+              class="about_me_image_item about_me_image_item_now"
+              data-type="image"
+            ></div>
+            <div
+              class="about_me_image_item about_me_image_item_past"
+              data-type="image"
+            ></div>
+            <div
+              class="about_me_image_item about_me_image_item_plane"
+              data-type="image"
+            ></div>
           </div>
-          <div class="about_me_description"><b>A couple of words about me:</b><br>
-            &bull; Education: Military Academy of the Republic of Belarus (2011). Aviation faculty.<br>
-            &bull; Specialty: Technical exploitation of manned aircrafts and their power unins.<br>
-            &bull; Previous job: Engineer of the aviation engineering department of the aviation squadron (IL-76, An-26)<br>
-            &bull; Courses: SkillUp(Ukraine) - Basic Web and SQL for software testing (2020) and «The Rolling Scopes school» (EPAM Systems) (2021).<br>
+          <div class="about_me_description">
+            <b>A couple of words about me:</b><br />
+            &bull; Education: Military Academy of the Republic of Belarus
+            (2011). Aviation faculty.<br />
+            &bull; Specialty: Technical exploitation of manned aircrafts and
+            their power unins.<br />
+            &bull; Previous job: Engineer of the aviation engineering department
+            of the aviation squadron (IL-76, An-26)<br />
+            &bull; Courses: SkillUp(Ukraine) - Basic Web and SQL for software
+            testing (2020) and «The Rolling Scopes school» (EPAM Systems)
+            (2021).<br />
             &bull; English: A2 - Pre-intermediate
           </div>
         </div>
@@ -99,5 +117,7 @@
     <script>
       AOS.init();
     </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
   <script src="main.js"></script></body>
 </html>

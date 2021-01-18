@@ -15,8 +15,11 @@ section {
   margin: 0 auto;
   display: flex;
   max-width: 1020px;
-  width: 100%;
-  box-sizing: padding-box;
+  box-sizing: border-box;
+
+  @media screen and (max-width: $desktop) {
+    width: 100%;
+  }
 
   &_header {
     justify-content: center;
@@ -68,4 +71,16 @@ a {
   text-decoration: none;
   font-size: inherit;
   font-style: inherit;
+}
+
+.typed-cursor {
+  opacity: 1;
+  font-weight: 100;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
