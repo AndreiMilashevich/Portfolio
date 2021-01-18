@@ -4,14 +4,14 @@ import Typed from 'typed.js';
 const options = {
   strings: ['Hello',
     "I'm Andrei!",
-    "I'm a front-End Web Developer!",
-    
+    "I'm a Web Developer!",
+
   ],
   typeSpeed: 60,
   backDelay: 1200,
   backSpeed: 43,
   loop: true,
-  fadeOut: false
+  fadeOut: false,
 };
 
 const typed = new Typed('.typed', options);
