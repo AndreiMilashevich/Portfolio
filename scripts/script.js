@@ -1,20 +1,8 @@
+/* eslint-disable max-len */
+/* eslint-disable prefer-destructuring */
+/* eslint-disable func-names */
 import '../scss/index.scss';
 import Typed from 'typed.js';
-
-const options = {
-  strings: ['Hello',
-    "I'm Andrei!",
-    "I'm a Web Developer!",
-
-  ],
-  typeSpeed: 60,
-  backDelay: 1200,
-  backSpeed: 43,
-  loop: true,
-  fadeOut: false,
-};
-
-const typed = new Typed('.typed', options);
 
 const skillsContainer = document.querySelector('.skills_wrapper');
 const portfolioButtonContainer = document.querySelector('.portfolio_button_container');
@@ -28,11 +16,26 @@ const portfolioButton = document.querySelector('.button_portfolio');
 const aboutMeButton = document.querySelector('.button_about_me');
 const contactButton = document.querySelector('.button_contacts');
 const learnMoreButton = document.querySelector('.learn_more');
+const submit = document.querySelector('.submit');
+const langButtonEn = document.querySelector('.en');
+const langButtonRu = document.querySelector('.ru');
 
 const skillSection = document.querySelector('.skills');
 const portfolioSection = document.querySelector('.portfolio');
 const aboutMeSection = document.querySelector('.about_me');
+const contactSection = document.querySelector('.contact_section');
 const header = document.querySelector('header');
+
+// const hello = document.querySelector('.hello_span');
+const skillsHeader = document.querySelector('.skills_header');
+const portfolioHeader = document.querySelector('.portfolio_header');
+const aboutMeHeader = document.querySelector('.about_me_header');
+const contactsHeader = document.querySelector('.contact_header');
+const inputName = document.querySelector('#name');
+const labelName = document.querySelector('.name');
+const inputMail = document.querySelector('#email');
+const inputMessage = document.querySelector('#message');
+const labelMessage = document.querySelector('.message');
 
 const portfolio = [
   {
@@ -76,6 +79,62 @@ const technologies = [
   { name: 'JS' },
   { name: 'Webpack' },
 ];
+
+const pageContent = {
+  // eslint-disable-next-line quote-props
+  'ru': {
+    home: 'Домой',
+    skills: 'Навыки',
+    portfolio: 'Портфолио',
+    about: 'Обо мне',
+    contacts: 'Контакты',
+    strings: ['Привет!',
+      'Я Андрей!',
+      'и я Web разработчик!',
+    ],
+    learn: '<p>Узнать больше</p>',
+    skillsHeader: 'Технические навыки',
+    name: 'Имя',
+    namePlaceholder: 'Введите ваше имя',
+    emailPlaceholder: 'Введите ваш email',
+    textarea: 'Ваше сообщение',
+    textareaPlaceholder: 'Введите ваше сообщение',
+    submit: 'Отправить сообщение',
+  },
+  // eslint-disable-next-line quote-props
+  'en': {
+    home: 'Home',
+    skills: 'Skills',
+    portfolio: 'Portfilio',
+    about: 'About me',
+    contacts: 'Contacts',
+    strings: ['Hello!',
+      "I'm Andrei!",
+      "I'm a Web Developer!",
+    ],
+    learn: '<p>Learn more about what I do</p>',
+    skillsHeader: 'Skills',
+    name: 'name',
+    namePlaceholder: 'Enter your name',
+    emailPlaceholder: 'Enter your email',
+    textarea: 'Your message',
+    textareaPlaceholder: 'Enter your message',
+    submit: 'Send message',
+  },
+};
+
+let language = 'en';
+
+const options = {
+  strings: pageContent[`${language}`].strings,
+  typeSpeed: 60,
+  backDelay: 1200,
+  backSpeed: 43,
+  loop: true,
+  fadeOut: false,
+};
+
+let typed = new Typed('.typed', options);
 
 function setSkills(data) {
   data.forEach((element, index) => {
@@ -141,6 +200,7 @@ function debounce(func, wait, immediate) {
   let timeout;
   return function () {
     const context = this; const
+      // eslint-disable-next-line prefer-rest-params
       args = arguments;
     const later = function () {
       timeout = null;
@@ -183,16 +243,74 @@ const setButtonsActive = () => {
   } else {
     aboutMeButton.classList.remove('active');
   }
-
+  if (scrollDistance >= contactSection.offsetTop - header.offsetHeight && scrollDistance <= contactSection.offsetTop + contactSection.offsetHeight) {
+    contactButton.classList.add('active');
+  } else {
+    contactButton.classList.remove('active');
+  }
   if (scrollDistance < skillSection.offsetTop - header.offsetHeight) {
     homeButton.classList.add('active');
   }
 };
+
+function getLanguage() {
+  if (localStorage.getItem('language') === null) {
+    localStorage.setItem('language', 'en');
+  } else {
+    language = localStorage.getItem('language');
+  }
+}
+
+function setPageContent() {
+  typed.destroy();
+  homeButton.textContent = pageContent[`${language}`].home;
+  skillsButton.textContent = pageContent[`${language}`].skills;
+  portfolioButton.textContent = pageContent[`${language}`].portfolio;
+  contactButton.textContent = pageContent[`${language}`].contacts;
+  aboutMeButton.textContent = pageContent[`${language}`].about;
+  // hello.textContent = pageContent[`${language}`].strings[0];
+  learnMoreButton.innerHTML = pageContent[`${language}`].learn;
+  skillsHeader.textContent = pageContent[`${language}`].skillsHeader;
+  portfolioHeader.textContent = pageContent[`${language}`].portfolio;
+  aboutMeHeader.textContent = pageContent[`${language}`].about;
+  contactsHeader.textContent = pageContent[`${language}`].contacts;
+  inputName.placeholder = pageContent[`${language}`].name;
+  labelName.textContent = pageContent[`${language}`].namePlaceholder;
+  inputMail.placeholder = pageContent[`${language}`].emailPlaceholder;
+  inputMessage.textContent = pageContent[`${language}`].textarea;
+  labelMessage.textContent = pageContent[`${language}`].textareaPlaceholder;
+  submit.value = pageContent[`${language}`].textareaPlaceholder;
+  options.strings = pageContent[`${language}`].strings;
+  typed = new Typed('.typed', options);
+  if (language === 'en') {
+    langButtonEn.classList.add('lang_active');
+    langButtonRu.classList.remove('lang_active');
+  } else {
+    langButtonRu.classList.add('lang_active');
+    langButtonEn.classList.remove('lang_active');
+  }
+}
+
+getLanguage();
+setPageContent();
 
 skillsButton.addEventListener('click', () => scroll(skillSection));
 learnMoreButton.addEventListener('click', () => scroll(skillSection));
 homeButton.addEventListener('click', () => scroll(0, 0));
 portfolioButton.addEventListener('click', () => scroll(portfolioSection));
 aboutMeButton.addEventListener('click', () => scroll(aboutMeSection));
-// contactButton.addEventListener('click', () => scroll(skillSection));
+contactButton.addEventListener('click', () => scroll(contactSection));
+
+langButtonEn.addEventListener('click', () => {
+  language = langButtonEn.dataset.lang;
+  localStorage.setItem('language', 'en');
+  setPageContent();
+});
+
+langButtonRu.addEventListener('click', () => {
+  language = langButtonRu.dataset.lang;
+  localStorage.setItem('language', 'ru');
+  setPageContent();
+});
+
 window.addEventListener('scroll', debounce(setButtonsActive, 400));

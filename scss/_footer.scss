@@ -10,6 +10,7 @@ footer {
     display: flex;
     flex-direction: row;
     padding: 22px 42px;
+    position: relative;
 
     @media screen and (max-width: $tablet) {
       padding: 22px 0;
@@ -92,3 +93,4 @@ footer {
     }
   }
 }
+

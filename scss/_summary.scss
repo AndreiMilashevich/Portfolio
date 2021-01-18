@@ -14,8 +14,10 @@ section {
 .container {
   margin: 0 auto;
   display: flex;
-  max-width: 1020px;
-  box-sizing: border-box;
+
+  @media screen and (min-width: $desktop) {
+    width: 1020px;
+  }
 
   @media screen and (max-width: $desktop) {
     width: 100%;
@@ -48,6 +50,10 @@ section {
 
     @media screen and (max-width: $tablet) {
       padding: 0;
+    }
+
+    &_contact {
+      flex-direction: column;
     }
   }
 }

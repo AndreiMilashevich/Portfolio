@@ -25,12 +25,13 @@
     >
       <div class="container container_header">
         <nav>
-          <ul>
-            <li class="button_home active">Home</li>
-            <li class="button_skills">Skills</li>
-            <li class="button_portfolio">Portfolio</li>
-            <li class="button_about_me">About me</li>
-            <!-- <li class="button_contacts">Contacts</li> -->
+          <ul class="menu">
+            <li class="button_home active menu_item"></li>
+            <li class="button_skills menu_item"></li>
+            <li class="button_portfolio menu_item"></li>
+            <li class="button_about_me menu_item"></li>
+            <li class="button_contacts menu_item"></li>
+            <li class="button_contacts menu_item"><div class="lang en" data-lang='en'></div><div class="lang ru" data-lang='ru'></div></li>
           </ul>
         </nav>
       </div>
@@ -38,20 +39,19 @@
     <section class="preface">
       <div class="hello" data-aos="flip-down" data-aos-duration="750">
         <h1 class="hello_paragraph">
-          Hello,<br /><span class="typed"><span>
+          <span class="hello_span"></span><br /><span class="typed"><span>
         </h1>
-        <!-- I'm Andrei and I'm a frontend developer -->
         <div class="learn_more">
-          <p>Learn more about what I do</p>
+          <p></p>
         </div>
       </div>
     </section>
     <section class="skills">
-      <h2 class="skills_header">Technical skills</h2>
+      <h2 class="skills_header"></h2>
       <div class="container skills_wrapper container_skills"></div>
     </section>
     <section class="portfolio">
-      <h2 class="portfolio_header">Portfolio</h2>
+      <h2 class="portfolio_header"></h2>
 
       <div class="container container_portfolio">
         <div class="portfolio_button_container"></div>
@@ -60,7 +60,7 @@
     </section>
     <section class="about_me">
       <div class="container container_about_me">
-        <h2 class="about_me_header">About me</h2>
+        <h2 class="about_me_header"></h2>
         <div class="about_me_body">
           <div class="about_me_image_wrapper">
             <div
@@ -90,6 +90,20 @@
             &bull; English: A2 - Pre-intermediate
           </div>
         </div>
+      </div>
+    </section>
+    <section class="contact_section">
+      <h2 class="portfolio_header contact_header"></h2>
+      <div class="container container_contact">
+        <form action="" method="post">
+          <label for="name" class="name"><p></p></label>
+          <input type="text" class="input" id="name" placeholder="Enter your name">
+          <label for="email" class="email"><p>Email</p></label>
+          <input type="email" name="" id="email" class="input" placeholder="Enter your email">
+        <p class="message"></p>
+          <textarea name="" cols="50" rows="10" id="message" placeholder="Enter your message"></textarea>
+          <input type="submit" value="Send message" class="submit">
+        </form>
       </div>
     </section>
     <footer>
