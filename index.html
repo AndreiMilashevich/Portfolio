@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Portfolio</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
@@ -77,17 +77,6 @@
             ></div>
           </div>
           <div class="about_me_description">
-            <!-- <b>A couple of words about me:</b><br />
-            &bull; Education: Military Academy of the Republic of Belarus
-            (2011). Aviation faculty.<br />
-            &bull; Specialty: Technical exploitation of manned aircrafts and
-            their power unins.<br />
-            &bull; Previous job: Engineer of the aviation engineering department
-            of the aviation squadron (IL-76, An-26)<br />
-            &bull; Courses: SkillUp(Ukraine) - Basic Web and SQL for software
-            testing (2020) and «The Rolling Scopes school» (EPAM Systems)
-            (2021).<br />
-            &bull; English: A2 - Pre-intermediate -->
           </div>
         </div>
       </div>
@@ -95,13 +84,13 @@
     <section class="contact_section">
       <h2 class="portfolio_header contact_header"></h2>
       <div class="container container_contact">
-        <form action="" method="post">
+        <form action="" method="post" data-netlify="true" name="contact">
           <label for="name" class="name"><p></p></label>
-          <input type="text" class="input" id="name" placeholder="Enter your name">
+          <input type="text" class="input" id="name" name="name" placeholder="Enter your name">
           <label for="email" class="email"><p>Email</p></label>
-          <input type="email" name="" id="email" class="input" placeholder="Enter your email">
+          <input type="email" name="" id="email" class="input" name="email" placeholder="Enter your email">
         <p class="message"></p>
-          <textarea name="" cols="50" rows="10" id="message" placeholder="Enter your message"></textarea>
+          <textarea name="" cols="50" rows="10" id="message" name="message" placeholder="Enter your message"></textarea>
           <input type="submit" value="Send message" class="submit">
         </form>
       </div>

@@ -90,3 +90,9 @@ a {
   50% { opacity: 0; }
   100% { opacity: 1; }
 }
+
+ul {
+  @media screen and (max-width: $tablet) {
+    padding-left: 0;
+  }
+}
