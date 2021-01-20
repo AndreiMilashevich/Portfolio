@@ -60,6 +60,22 @@ export const portfolio = [
     linkDemo: 'https://andreimilashevich.github.io/raindrops/raindrops/build/index',
     attr: 'data-html="true" data-css="true" data-js="true" data-sass="true" data-webpack="true"',
   },
+  {
+    name: 'Calculator',
+    icon: '../assets/icons/calculator-min.png',
+    description: {
+      // eslint-disable-next-line quote-props
+      'en': `<p>The Rainrops app was created during the course of The UpSkillsLab (EPAM Systems). The app is a simple calculator. 
+      The project uses such technologies as: <b>HTML5</b>, <b>CSS3</b>, <b>SASS</b>, <b>JavaScript</b>.</p>`,
+      // eslint-disable-next-line quote-props
+      'ru': `<p>Приложение калькулятор было создано во время прохождения курса UpSkillsLab (EPAM Systems). 
+      Приложение представляет собой простой калькулятор.</p>
+      <p>В проекте применены: <b>HTML5</b>, <b>CSS3</b>, <b>JavaScript</b>.</p>`,
+    },
+    linkGit: 'https://github.com/AndreiMilashevich/calculator',
+    linkDemo: 'https://andreimilashevich.github.io/calculator/index',
+    attr: 'data-html="true" data-css="true" data-js="true" data-sass="false" data-webpack="false"',
+  },
 ];
 
 export const skills = [
