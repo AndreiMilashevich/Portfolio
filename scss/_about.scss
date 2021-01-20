@@ -42,13 +42,13 @@
       }
 
       &_now {
-        background-image: url('../assets/photos/foto-now-min.png');
+        background-image: url('assets/photos/foto-now-min.png');
         z-index: 3;
         left: 0;
       }
 
       &_past {
-        background-image: url('../assets/photos/be90367e6933b2301eae4d2bac79c8d3-min.jpg');
+        background-image: url('assets/photos/be90367e6933b2301eae4d2bac79c8d3-min.jpg');
         top: 25px;
         left: 50px;
         z-index: 2;
@@ -59,7 +59,7 @@
       }
 
       &_plane {
-        background-image: url('../assets/photos/5942981_large-min.jpg');
+        background-image: url('assets/photos/5942981_large-min.jpg');
         top: 50px;
         left: 100px;
         z-index: 1;

@@ -2,7 +2,7 @@
 export const portfolio = [
   {
     name: 'fancy-weather',
-    icon: '../assets/icons/fancy-weather_icon-min.png',
+    icon: 'assets/icons/fancy-weather_icon-min.png',
     description: {
       // eslint-disable-next-line quote-props
       'en': `<p>The Fancy-weather was created during the course of The Rolling Scopes school (EPAM Systems).
@@ -24,7 +24,7 @@ export const portfolio = [
   },
   {
     name: 'Simple-singolo',
-    icon: '../assets/icons/singolo_icon-min.png',
+    icon: 'assets/icons/singolo_icon-min.png',
     description: {
       // eslint-disable-next-line quote-props
       'en': `<p>The Simple-Singolo was created during the course of The Rolling Scopes school (EPAM Systems).
@@ -41,7 +41,7 @@ export const portfolio = [
   },
   {
     name: 'Raindrops',
-    icon: '../assets/icons/raindrops-min.png',
+    icon: 'assets/icons/raindrops-min.png',
     description: {
       // eslint-disable-next-line quote-props
       'en': `<p>The Rainrops Game was created during the course of The Rolling Scopes school (EPAM Systems).
@@ -62,11 +62,11 @@ export const portfolio = [
   },
   {
     name: 'Calculator',
-    icon: '../assets/icons/Calculator-min.png',
+    icon: 'assets/icons/Calculator-min.png',
     description: {
       // eslint-disable-next-line quote-props
-      'en': `<p>The Rainrops app was created during the course of The UpSkillsLab (EPAM Systems). The app is a simple calculator. 
-      The project uses such technologies as: <b>HTML5</b>, <b>CSS3</b>, <b>SASS</b>, <b>JavaScript</b>.</p>`,
+      'en': `<p>The Rainrops app was created during the course of The UpSkillsLab (EPAM Systems). The app is a simple calculator.</p> 
+      <p>The project uses such technologies as: <b>HTML5</b>, <b>CSS3</b>, <b>SASS</b>, <b>JavaScript</b>.</p>`,
       // eslint-disable-next-line quote-props
       'ru': `<p>Приложение калькулятор было создано во время прохождения курса UpSkillsLab (EPAM Systems). 
       Приложение представляет собой простой калькулятор.</p>
@@ -79,13 +79,13 @@ export const portfolio = [
 ];
 
 export const skills = [
-  { description: 'HTML5', icon: '../assets/icons/html5_icon.png' },
-  { description: 'CSS3', icon: '../assets/icons/css3_icon.png' },
-  { description: 'JavaScript', icon: '../assets/icons/js_icon.png' },
-  { description: 'SASS', icon: '../assets/icons/sass_icon.png' },
-  { description: 'Git', icon: '../assets/icons/git_icon.png' },
-  { description: 'GitHub', icon: '../assets/icons/github_icon.png' },
-  { description: 'Webpack', icon: '../assets/icons/webpack_icon.png' },
+  { description: 'HTML5', icon: 'assets/icons/html5_icon.png' },
+  { description: 'CSS3', icon: 'assets/icons/css3_icon.png' },
+  { description: 'JavaScript', icon: 'assets/icons/js_icon.png' },
+  { description: 'SASS', icon: 'assets/icons/sass_icon.png' },
+  { description: 'Git', icon: 'assets/icons/git_icon.png' },
+  { description: 'GitHub', icon: 'assets/icons/github_icon.png' },
+  { description: 'Webpack', icon: 'assets/icons/webpack_icon.png' },
 ];
 
 export const technologies = [

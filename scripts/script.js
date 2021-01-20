@@ -205,8 +205,8 @@ function setPageContent() {
   inputName.placeholder = pageContent[`${language}`].namePlaceholder;
   labelName.innerHTML = pageContent[`${language}`].name;
   inputMail.placeholder = pageContent[`${language}`].emailPlaceholder;
-  inputMessage.textContent = pageContent[`${language}`].textarea;
-  labelMessage.textContent = pageContent[`${language}`].textareaPlaceholder;
+  inputMessage.placeholder = pageContent[`${language}`].textareaPlaceholder;
+  labelMessage.textContent = pageContent[`${language}`].textarea;
   submit.value = pageContent[`${language}`].textareaPlaceholder;
   options.strings = pageContent[`${language}`].strings;
   aboutMeDescription.innerHTML = pageContent[`${language}`].aboutDescription;
