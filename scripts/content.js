@@ -153,12 +153,12 @@ export const pageContent = {
     <li>Education: Military Academy of the Republic of Belarus
     (2011). Aviation faculty.</li>
     <li>Specialty: Technical exploitation of manned aircrafts and
-    their power units</li>
+    their power units.</li>
     <li>Previous job: Engineer of the aviation engineering department
-    of the aviation squadron (IL-76, An-26)</li>
+    of the aviation squadron (IL-76, An-26).</li>
     <li>Courses: SkillUp(Ukraine) - Basic Web and SQL for software
     testing (2020) and «The Rolling Scopes school» (EPAM Systems)
     (2021).</li>
-    <li>English: A2 - Pre-intermediate</li></ul>`,
+    <li>English: A2 - Pre-intermediate.</li></ul>`,
   },
 };
