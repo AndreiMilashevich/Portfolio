@@ -14,6 +14,8 @@ const portfolioContainer = document.querySelector('.portfolio_wrapper');
 const skillsDelay = 200;
 const aosDuration = 500;
 const photos = Array.from(document.querySelectorAll('.about_me_image_item'));
+const preloader = document.querySelector('.preloader_wrapper');
+const circle = document.querySelector('.circle');
 
 const skillsButton = document.querySelector('.button_skills');
 const homeButton = document.querySelector('.button_home');
@@ -135,13 +137,7 @@ function scroll(block, deltaHeight = header.offsetHeight) {
   window.scrollTo({ left: 0, top: block.offsetTop - deltaHeight + 1, behavior: 'smooth' });
 }
 
-document.body.addEventListener('click', (event) => {
-  if (event.target.dataset.type === 'image') {
-    event.target.classList.toggle('about_me_image_item_large');
-  } else {
-    photos.forEach((el) => el.classList.remove('about_me_image_item_large'));
-  }
-});
+
 
 const setButtonsActive = () => {
   const scrollDistance = window.pageYOffset;
@@ -275,4 +271,17 @@ portfolioButtonContainer.addEventListener('click', (event) => {
   portfolioSort('sass', data, projects);
   portfolioSort('js', data, projects);
   portfolioSort('webpack', data, projects);
+});
+
+document.body.addEventListener('click', (event) => {
+  if (event.target.dataset.type === 'image') {
+    event.target.classList.toggle('about_me_image_item_large');
+  } else {
+    photos.forEach((el) => el.classList.remove('about_me_image_item_large'));
+  }
+});
+
+window.addEventListener('load', () => {
+  circle.classList.remove('loader');
+  preloader.classList.toggle('preloader_hidden');
 });
