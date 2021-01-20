@@ -62,7 +62,7 @@ export const portfolio = [
   },
   {
     name: 'Calculator',
-    icon: '../assets/icons/calculator-min.png',
+    icon: '../assets/icons/Calculator-min.png',
     description: {
       // eslint-disable-next-line quote-props
       'en': `<p>The Rainrops app was created during the course of The UpSkillsLab (EPAM Systems). The app is a simple calculator. 
@@ -73,7 +73,7 @@ export const portfolio = [
       <p>В проекте применены: <b>HTML5</b>, <b>CSS3</b>, <b>JavaScript</b>.</p>`,
     },
     linkGit: 'https://github.com/AndreiMilashevich/calculator',
-    linkDemo: 'https://andreimilashevich.github.io/calculator/index',
+    linkDemo: 'https://andreimilashevich.github.io/Calculator/',
     attr: 'data-html="true" data-css="true" data-js="true" data-sass="false" data-webpack="false"',
   },
 ];
