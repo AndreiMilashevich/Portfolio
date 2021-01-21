@@ -3,7 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Milashevich milashevichandrei portfolio front-end developer junior" />
+    <meta name="description" content="this page is my portfolio" />
+    <meta name="theme-color" content="#212529">
+    <meta property="og:title" content="Portfolio "/>
+    <meta property="og:description" content="Andrei Milashevich"/>
+    <meta property="og:image" content="assets/icons/og-min.png"/>
+    <meta property="og:type" content="profile"/>
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="300" />
     <title>Portfolio</title>
+    <link rel="apple-touch-icon" href="assets/icons/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
@@ -13,7 +23,7 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../assets/icons/favicon-32x32.png"
+      href="assets/icons/favicon-32x32.png"
     />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link href="main.css" rel="stylesheet"></head>
@@ -92,7 +102,7 @@
           <input type="text" class="input" id="name" name="name" placeholder="Enter your name" required>
           <label for="email" class="email"><p>Email</p></label>
           <input type="email" name="email" id="email" class="input" name="email"  required>
-        <p class="message"></p>
+          <label for="message"><p class="message"></p></label>
           <textarea cols="50" rows="10" id="message" name="message" placeholder="Enter your message" value="" required></textarea>
           <input type="submit" value="Send message" class="submit">
         </form>
@@ -102,18 +112,18 @@
       <div class="container footer">
         <div class="copyright">&#169; 2021 Developed by Andrei Milashevich</div>
         <div class="social_media_container">
-          <a href="tel:+375298323060"
+          <a href="tel:+375298323060" rel="noopener"
             ><div class="link_phone social_icon"></div
           ></a>
-          <a href="mailto:milashevichandrei@gmail.com" target="_blank"
+          <a href="mailto:milashevichandrei@gmail.com" target="_blank" rel="noopener"
             ><div class="link_mail social_icon"></div
           ></a>
           <a
-            href="https://www.linkedin.com/in/andrei-milashevich/"
+            href="https://www.linkedin.com/in/andrei-milashevich/" rel="noopener"
             target="_blank"
             ><div class="link_linkedin social_icon"></div
           ></a>
-          <a href="https://www.github.com/AndreiMilashevich/" target="_blank"
+          <a href="https://www.github.com/AndreiMilashevich/" rel="noopener" target="_blank"
             ><div class="link_git social_icon"></div
           ></a>
         </div>
@@ -124,7 +134,7 @@
     <script>
       AOS.init();
     </script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
   <script src="main.js"></script></body>
 </html>

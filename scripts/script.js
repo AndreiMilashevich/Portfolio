@@ -109,10 +109,10 @@ function setPortfolioItem(data) {
       <div class="portfolio_item_description"><p>${element.description[`${language}`]}</p></div>  
     </div>
     <div class="portfolio_item_button_container button" >
-      <a href="${element.linkDemo}" target="_blank">
+      <a href="${element.linkDemo}" target="_blank" rel="noopener">
         <div class="portfolio_button_item">${pageContent[`${language}`].demo}</div>
       </a>
-      <a href="${element.linkGit}" target="_blank">
+      <a href="${element.linkGit}" target="_blank" rel="noopener">
         <div class="portfolio_button_item">GitHub</div>
       </a>
     </div>
