@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-plusplus */
 /* eslint-disable max-len */
 /* eslint-disable prefer-destructuring */
@@ -13,6 +14,7 @@ const portfolioButtonContainer = document.querySelector('.portfolio_button_conta
 const portfolioContainer = document.querySelector('.portfolio_wrapper');
 const skillsDelay = 200;
 const aosDuration = 500;
+const portfolioDelay = 500;
 const photos = Array.from(document.querySelectorAll('.about_me_image_item'));
 const preloader = document.querySelector('.preloader_wrapper');
 const circle = document.querySelector('.circle');
@@ -94,14 +96,16 @@ function setPortfolioItem(data) {
   data.forEach((element, index) => {
     let side;
     if (index % 2 === 0) {
-      side = 'left';
+      side = 'up';
     } else {
-      side = 'right';
+      side = 'down';
     }
-    portfolioContainer.insertAdjacentHTML('beforeend', `<div class="portfolio_item" data-aos="flip-${side}" data-aos-anchor-placement="bottom-center" data-aos-duration="1000" data-aos-anchor=".portfolio_header" data-aos-anchor-placement="center-bottom " ${portfolio[index].attr}>
+    portfolioContainer.insertAdjacentHTML('beforeend', `<div class="portfolio_item" data-aos="flip-${side}" 
+    data-aos-anchor-placement="bottom-center" data-aos-duration="1000" data-aos-anchor=".portfolio_header" data-aos-delay="${index * portfolioDelay}"
+    data-aos-anchor-placement="center-bottom " ${portfolio[index].attr}>
     <h3>${element.name}</h3>
     <div class="portfolio_item_body">
-      <div class="portfolio_item_image" style="background-image: url('${element.icon}')"></div>
+      <div class="portfolio_item_image" style="background-image: url('${element.icon}')" data-type='image' data-place='portfolio'></div>
       <div class="portfolio_item_description"><p>${element.description[`${language}`]}</p></div>  
     </div>
     <div class="portfolio_item_button_container button" >
@@ -137,9 +141,10 @@ function scroll(block, deltaHeight = header.offsetHeight) {
   window.scrollTo({ left: 0, top: block.offsetTop - deltaHeight + 1, behavior: 'smooth' });
 }
 
-
-
 const setButtonsActive = () => {
+  const images = Array.from(document.querySelectorAll('.portfolio_item_image'));
+  photos.forEach((el) => el.classList.remove('about_me_image_item_large'));
+  images.forEach((el) => el.classList.remove('portfolio_item_image_active'));
   const scrollDistance = window.pageYOffset;
   portfolioButton.classList.remove('active');
   homeButton.classList.remove('active');
@@ -192,7 +197,6 @@ function setPageContent() {
   portfolioButton.textContent = pageContent[`${language}`].portfolio;
   contactButton.textContent = pageContent[`${language}`].contacts;
   aboutMeButton.textContent = pageContent[`${language}`].about;
-  // hello.textContent = pageContent[`${language}`].strings[0];
   learnMoreButton.innerHTML = pageContent[`${language}`].learn;
   skillsHeader.textContent = pageContent[`${language}`].skillsHeader;
   portfolioHeader.textContent = pageContent[`${language}`].portfolio;
@@ -246,6 +250,7 @@ langButtonRu.addEventListener('click', () => {
 });
 
 window.addEventListener('scroll', debounce(setButtonsActive, 400));
+
 portfolioButtonContainer.addEventListener('click', (event) => {
   const projects = Array.from(document.querySelectorAll('.portfolio_item'));
   const data = event.target.dataset.button;
@@ -274,10 +279,14 @@ portfolioButtonContainer.addEventListener('click', (event) => {
 });
 
 document.body.addEventListener('click', (event) => {
-  if (event.target.dataset.type === 'image') {
+  const images = Array.from(document.querySelectorAll('.portfolio_item_image'));
+  if (event.target.dataset.type === 'image' && event.target.dataset.place === 'about') {
     event.target.classList.toggle('about_me_image_item_large');
+  } else if (event.target.dataset.type === 'image' && event.target.dataset.place === 'portfolio') {
+    event.target.classList.toggle('portfolio_item_image_active');
   } else {
     photos.forEach((el) => el.classList.remove('about_me_image_item_large'));
+    images.forEach((el) => el.classList.remove('portfolio_item_image_active'));
   }
 });
 
