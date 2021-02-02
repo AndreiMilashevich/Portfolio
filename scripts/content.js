@@ -86,6 +86,7 @@ export const skills = [
   { description: 'Git', icon: 'assets/icons/git_icon.png' },
   { description: 'GitHub', icon: 'assets/icons/github_icon.png' },
   { description: 'Webpack', icon: 'assets/icons/webpack_icon.png' },
+  { description: 'React.js', icon: 'assets/icons/react.png' },
 ];
 
 export const technologies = [
